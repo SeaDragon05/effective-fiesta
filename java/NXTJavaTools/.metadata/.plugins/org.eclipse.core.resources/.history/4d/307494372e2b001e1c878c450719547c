@@ -1,0 +1,10 @@
+package objects;
+
+import javax.usb.*;
+
+public class NXT {
+	private UsbPipe usbPipe;
+	public NXT() {
+		
+	}
+}

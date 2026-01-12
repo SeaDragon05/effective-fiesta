@@ -1,0 +1,49 @@
+package main;
+
+import java.util.List;
+
+import javax.usb.*;
+
+import org.usb4java.Loader;
+
+public class test {
+	public static void main(String[] args) throws SecurityException, UsbException {
+		UsbServices usbServices = UsbHostManager.getUsbServices();
+		UsbHub rootHub = usbServices.getRootUsbHub();
+		short NXT_DEVICE_ID = 8;
+		short NXT_PRODUCT_ID = (short) ((byte) 0x0694002);
+		UsbDevice NXT = findDevice(rootHub, NXT_DEVICE_ID, NXT_PRODUCT_ID);
+
+		UsbInterface usbInterface = NXT.getActiveUsbConfiguration().getUsbInterface((byte) 0);
+		UsbEndpoint endpoint = usbInterface.getUsbEndpoint((byte) 0x81); // Change the endpoint address accordingly
+
+		UsbPipe usbPipe = endpoint.getUsbPipe();
+		usbPipe.open();
+		
+		byte[] data = Main.playTone(500, 100);
+		
+		int sentBytes = usbPipe.syncSubmit(data);
+		
+		System.out.println("Send the data to the NXT");
+		
+		usbPipe.close();
+
+	}
+
+	public static UsbDevice findDevice(UsbHub hub, short vendorId, short productId) {
+		for (UsbDevice device : (List<UsbDevice>) hub.getAttachedUsbDevices()) {
+			UsbDeviceDescriptor desc = device.getUsbDeviceDescriptor();
+			if (desc.idVendor() == vendorId && desc.idProduct() == productId)
+				return device;
+			if (device.isUsbHub()) {
+				device = findDevice((UsbHub) device, vendorId, productId);
+				if (device != null) {
+
+					System.err.println("Could not find the device!");
+					return device;
+				}
+			}
+		}
+		return null;
+	}
+}

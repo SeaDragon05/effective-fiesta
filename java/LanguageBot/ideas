@@ -1,0 +1,51 @@
+create a method that can read and write from files
+when it reads a file, store that information to a variable
+
+each word learned will have a list of commonly used words after its use
+this is to create sentences. For example, when the word "the" is used, only a certain list of words can be used
+one word is "what", creating a short 2 worded sentence as "the what". but because that the word "what" can have so many uses,
+we must end the sentence or risk creating a sentence that makes no sense. there is another list that checks the previous used word
+to help decide what comes next. For the sentence "what was", what comes to mind? that? this? it? Im sure you can come up with a few more,
+but for the sake of this, we check "was".
+the word "was" is past tense, which narrows the choices we make.
+
+
+
+the bot will first learn. using tweets made by actual users, we can create a data base of how people speak.
+one way to approach this is to have it identify commonly used word structors.
+we start with a list of all words that are used to start a sentence. there are many which makes it for a more
+unpredictable outcome.
+
+when the word is chosen, we search this word to see what is commonly used after it, or choose subjects and connect words.
+
+to better understand this concept, lets use the beginning word "what".
+this word allows us to virtualy create any sentence we want in an asking or exclamind or even a confused state.
+
+So far the tweet is "what"
+
+to add on, lets search "what"
+
+commonly to begin questions, it is a statment of asking for understanding.
+
+so, lets choose a subject. lobsters.
+
+lets build the sentence to asking what are lobsters.
+searching up the word lobsters, we know that it is a nown, and plural.
+and the "bridge" words we can use are: "are" and "is"
+
+since it is plural, we use "are"
+
+"What are lobsters"
+
+we have a nice tweet.
+
+but what about commonly used words?
+
+"this"
+
+"place"
+
+"is"
+
+"good"
+

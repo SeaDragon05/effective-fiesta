@@ -1,0 +1,344 @@
+package port;
+
+import java.io.*;
+
+import javax.sound.sampled.*;
+
+public class Sing {
+	public static void main(String[] args) {
+		
+		
+		Sam.outputLength = 5;
+		//speak("/H EH L L OW Q Q AY5 AE M EY T AO LX K IH NX K AX4 M P Y UX T AH. G OW4 AH /H EH3 D P AH N K . M EY K M AY D EY.");
+
+		
+		Sam.speed = 20;
+		Sam.speed = 45;//oh boy
+		Sam.singmode = true;//this is required or it will sound off
+		
+		Audio.playaudio("untitledlow.wav");		
+		//Audio.playaudio("untitledlyrics.wav");
+		Wait(1900);
+		// SONG: Happy by Pharrel Williams
+		// Original copyright:
+		// ℗ 2013 Back Lot Music, under exclusive license to Columbia Records, 
+		// a Division of Sony Music Entertainment
+		
+		//USED ONLY FOR EDUCATIONAL PURPOSES ONLY
+		//I AM USING THIS IN AN ART CLASS
+		
+		// This song and all lyrics are NOT MINE
+		// I DO NOT TAKE CREDIT FOR ANY OF THE ORIGINAL WORK
+		
+		
+		//It might seem crazy what I am 'bout to say
+		//Original line: 		It  might seem crazy         what   I  am   bout   to     say
+		//Phonetic:      		IHT MAYT  SIYM KREYZIY       WAHT   AY AEM  AHBAWT TIHW   SEY
+		//musical  phonetics:	IHT MAYT  SIYM KREYEYZIYIYIY WAHAHT AY AEMM BAWT   TIHIHW SEYEYEYEYEY
+		//suggested length of line: 2.438s
+		Sam.outputLength = 3.2;
+		Sam.pitch = 53;
+		speak("/H IH6 T6 M4 AY4 T4 S4 IY4 M4 K4 R4 EY4 EY4 Z5 IY4 W6 AH6 T6 AY6 M6 B6 AW6 T4 T4 IH4 IH4 W4 S4 EY4 EY4 EY4 EY4");
+		
+		Wait(7586 - (2000 + 3000 + 200));
+		//Sunshine, she's here, you can take a break
+		//Original line : 		Sunshine              she s         here                you     can       take    a         break
+		//Phonetics: 			SAHNSHAYIYN           SHIYZ         /HIYER              YUW     KAEN      TEYK    AH        BREYK
+		//musical phonetics:	S1AH1N1SH1AY1AY1IY1N1 SH1IY1IY1Z1Z1 /H1IY1IY1IY1ER1 QQQ Y6Y6UW6 K6AE6N6 Q T6EY6K6 AH6AH5AH5 B4R4EY4EY4EY4EY4K4
+		//suggested length of line: 4.452s
+		Sam.outputLength = 3.5;
+		Sam.pitch = 52;
+		speak("S3 AH3 N3 SH3 AY3 AY3 IY3 N3 SH3 IY3 IY3 Z3 Z3 /H3 IY3 IY3 IY3 EH3 ER3 Q Q Q "
+				+ "Y6 UW6 K6 AE6 N6 T6 EY6 K6 AH6 B4 R4 EY4 EY4 EY4 EY4 K4 Q K8 AH8");
+		
+		
+		Wait(13031 - (2000 + 3000 + 6000 + 300));//adjusted
+		//I'm a hot air balloon that could go to space
+		//Original line:		Im    a  hot   air balloon  that  could to   go   space
+		//Phonetics:			AEIYM EY /HAOT ER  BAYLLUXN THAET KUXD  TIHW GAXW SPEYS
+		//musical phonetics:	
+		//suggested length of line:
+		Sam.pitch = 53;
+		Sam.outputLength = 4;
+		speak("AE8 AH8 M8 AH8 /H8 /H8 Q Q Q Q Q Q Q Q /H4 /H4 /H4 AO4 T4 EH4 EH4 ER4 ER4 B4 AO 4AO4 L4 UX4 UX3 UX3 UX4 UX4 N4 N4 N4 Q TH4 AE4 AE4 T4 K4 UX4 D4 G4 AX4 W4 D4 IH4 W4 Q S4 P4 EY4 S4 S4"); 
+
+		//With the air, like I don't care, baby by the way
+		//Original line:		With  the  air like I  don't care baby   by    the  way
+		//Phonetics:			WIHTH THAH ER  LAYK AY DOWNT KER  BEYBIY BAOIY THAH WEY
+		//musical phonetics:
+		//Note: This is double tracked, so we need to apply special effects to it
+		//suggested length of line:
+		
+		Wait(1800);
+		Sam.pitch = 61;
+		Sam.outputLength = 1;
+		String lyric0 = "W4 IH4 TH4 TH4 IY4 Q EH4 EH4 EH4 EH4 EH4 EH4 EH4 ER4";// 
+		//speak(lyric0);
+		int[] vocals1 = getTTSAudio(lyric0);
+		Sam.pitch = 62;
+		int[] vocals2 = getTTSAudio("Q " + lyric0);
+		mixVoices(vocals1, vocals2);
+		
+		Sam.outputLength = 3.7;
+		
+		speak("Q Q Q Q L4 AY4 AY4 K IH3 D OH4 OW4 N5 T5 K5 EH5 EH6 EH6 EH6 ER6 /H5 Q "
+				+ "B5 EH5 EY5 IY5 B5 IY5 IY5 B4 AO4 IY4 TH4 AH4 AH4 W6 EY4 EY3 EY5 EY6 IY7 IY7");
+		
+		
+		Wait(500);
+
+		Sam.outputLength = 0.5;
+		speak("/H AH /H");
+		Wait(1000);
+		//CHORUS:
+		Chorus();
+		
+		Wait(1000);
+		
+		//Here come bad news, talking this and that
+		//Original line:		Here   come bad  news talking  this  and  that
+		//Phonetics:			/HIYER KAHM BAED NUWZ TAOKIHNX THIHS AEND THAET
+		//musical phonetics:	
+		//suggested length of line: 4s
+		Sam.outputLength = 4;
+		Sam.pitch = 53;
+		speak("/H5 IY5 ER5 K3 AH3 AH3 M3 B3 AE3 AE3 D3 N3 UX3 UX3 UW3 Z3 Z3 T5 AO5 K5 "
+				+ "IH5 NX5 TH5 IH5 S5 AE5 N4 D4 TH4 AE4 AE4 AE4 AE4 AE4 AE4 T4");
+		//Perfect pitch, phonemes and pacing
+		
+		Wait(1600);
+		//(Yeah!)
+		//Well, give me all you got, don't hold it back
+		//Original line:		Well give me  all you got  don't hold  it  back
+		//Phonetics:			WEHL GIHV MIY AOL YUX GAOT DOWNT HAXLD IHT BAEK
+		//musical phonetics:	
+		//suggested length of line:
+		Sam.pitch = 59;
+		//Sam.outputLength = ;
+		speak("W4 EH4 L4 G2 IH2 V2 V2 M2 IY2 IY2 AO2 L2 L2 Y2 UX2 UX2 UX2 UX2 G2"
+				+ " AO2 AO2 T2 D4 AH4 AH4 OW4 N4 N4 T4 /H4 AX4 AX4 AX4 L4 L4 D4 IH4 T3 B3 AE3 AE3 AE3 AE3 K3");
+		
+		Wait(2000);
+		//(Yeah!)
+		//Well, I should probably warn ya, i'll be just fine
+		//Original line:		Well I  should probably   warn   ya  ill   be  just  fine
+		//Phonetics:			WEHL AY SHUXD  PRAABAHBLY WAOERN YAH AEIYL BIY JAHST FAYN
+		//musical phonetics:	
+		//suggested length of line:
+		Sam.pitch = 58;
+		Sam.outputLength = 4;
+		speak("W8 EH8 L8 Q Q Q AY3 SH3 UX3 D3 P3 R3 AA3 AA3 AA3 B3 AH3 B3"
+				+ " L3 IY3 W2 AO2 ER2 N2 Y3 AH3 AE3 IY4 L4 B4 IY4 J4 AH4 S4 T3 F3 AE3 AY3 N3 N3");
+		
+		Wait(2000);
+		//No offense to you, don't waste your time, heres why
+		//Original line:		No  offense to  you dont  waste your time heres   why
+		//Phonetics:			NOW AHFEHNS TUX YUW DOWNT WEYST YAXR TAYM /HIYERS WAY
+		//musical phonetics:	
+		//suggested length of line:
+		Sam.pitch = 53;
+		Sam.outputLength = 4.5;//little more room cause of gottal stops
+		speak("N8 OW8 AH7 AH6 F5 EH5 N5 S5 T4 UX4 Y3 UX3 UX3 UX3 UX3 UW3 Q Q Q Q Q Q D4 AX4 OW4 N4 T4 W3 EY3 S3 T4"
+				+ " Y4 AX3 R3 T5 AY5 IY4 M5 M5 Q Q Q Q Q Q Q Q Q Q Q Q Q Q Q Q Q Q Q Q Q /H4 IY4 ER4 S5 W5 AY7 IY8 IY8");
+		
+		Wait(1500);
+		Chorus();
+		
+		
+	}
+	
+	private static void Chorus() {//(Because I'm happy)
+		//Clap along if you feel like a room without a roof
+		//Original line:		Clap  along   if  you feel like a  room without  a  roof
+		//Phonetics:			KLAEP AHLAXNX IHF YUW FIYL LAYK AH RUXM WIHTHAWT AH RUXF
+		//musical phonetics:	
+		//suggested length of line:
+		Sam.pitch = 59;
+		Sam.outputLength = 5;
+		speak("K4 L4 AE3 AE3 P3 "
+				+ "AH3 L3 AO3 AO3 AO3 AO3 AX3 NX3 "
+				+ "IH3 IH3 IH3 F3 F3 "
+				+ "Y3 Y3 UX3 UX3 UW3 "
+				+ "F3 IY3 IY3 IY3 L3 "
+				+ "AH3 AY3 IY3 K3 "
+				+ "AH3 AH3 "
+				+ "R3 UX3 UX3 UX3 UX3 M3 M3 "
+				+ "W3 IH3 IH3 TH3 AE3 AE3 AW3 T3 "
+				+ "AH3 "
+				+ "R3 UX3 UX3 UX3 UX3 F3");
+		
+		Wait(900);
+		//(Because I'm happy)
+		//Clap along if you feel like happiness is the truth
+		//Original line:		Clap  along   if  you feel like happiness   is  the  truth
+		//Phonetics:			KLAEP AHLAXNX IHF YUW FIYL LAYK /HAEPIYNEHS IHZ THAH TRUXTH
+		//musical phonetics:	
+		//suggested length of line:
+		//Sam.pitch = ;
+		//Sam.outputLength = ;
+		speak("K3 L3 AE3 AE3 P3 "
+				+ "AH3 L3 AO3 AO3 AO3 AO3 AX3 NX3 "
+				+ "IH1 IH1 IH1 F2 "
+				+ "Y2 Y3 UX5 UX5 UX5"
+				+ " F5 IY6 IY6 IY6 IY6 L6 "
+				+ "L6 AH6 AY5 K5 "
+				+ "/H4 /H4 AE3 AE3 AE3 P3 IY3 IY3 IY3 N3 EH3 EH3 S3 S3 "
+				+ "IH3 IH3 Z3 Z3 "
+				+ "TH3 AH3 AH3 "
+				+ "T3 R3 UX3 UX3 UX3 TH3");
+		
+			
+		Wait(1000);
+		//(Because I'm happy)
+		//Clap along if you know what happiness is to you
+		//Original line:		[cleaned up lyric]
+		//Phonetics:			
+		//musical phonetics:	
+		//suggested length of line:
+		
+		Sam.pitch = 60;
+		//Sam.outputLength = ;
+		speak("K3 L3 AE1 AE1 P1 "
+				+ "AH1 L1 AO1 AO1 AO1 AX1 NX2 "
+				+ "IH2 IH2 IH2 F2 "
+				+ "Y2 Y2 UX3 UX3 UW3 "
+				+ "N3 OH3 OW3 "
+				+ "W3 W3 AH3 AH3 "
+				+ "/H3 AE3 EH3 EH3 P3 IY3 IY3 IY3 N3 EH3 EH3 EH3 S3 S3 "
+				+ "IH5 Z5 "
+				+ "T5 IH5 UW5 "
+				+ "Y5 Y3 UX3 UX3 UX3 UX3 UW3");
+		
+
+				
+		Wait(1000);
+		//(Because I'm happy)
+		//Clap along if you feel like that's what you wanna do
+		//Original line:		[cleaned up lyric]
+		//Phonetics:			
+		//musical phonetics:	
+		//suggested length of line:
+		Sam.pitch = 60;
+		//Sam.outputLength = ;
+		speak("K3 L3 AE3 AE3 P3 AH3 L4 AO4 AO3 AO3 AX4 AX4 NX3 IH3 IH3 IH3 IH3 F3 Y3 Y5 UX5 UX5 UX5 UW5 F5 IY5 IY5 IY5 "
+				+ "IY5 L5 L5 AY3 AY3 IY3 K3 TH3 AH3 AH3 AH3 T3 S3 W3 AH3 AH3 AH3 T3 Y3 UX3 UX3 UX3 UX3 W5 AH5 AH5 AH5 N5 N5 AH3 AH3 AH3 D3 UX3 UX3 UW3");
+		
+		
+	}
+
+	public static void mixVoices(int[] voice1, int[] voice2) {
+        // Implement your mixing logic here
+        // For simplicity, this example assumes equal-length tracks
+        // and a basic linear mix
+        byte[] mixedAudio = new byte[voice1.length];
+        for (int i = 0; i < mixedAudio.length; i++) {
+            mixedAudio[i] = (byte) ((voice1[i] + voice2[i]) / 2);
+        }
+        try {
+			AudioFormat audioFormat = new AudioFormat(Main.audioQuality, 8, 1, true, false);
+			DataLine.Info info = new DataLine.Info(SourceDataLine.class, audioFormat);
+			SourceDataLine line = (SourceDataLine) AudioSystem.getLine(info);
+
+			//System.out.println("Playing...");
+			line.open(audioFormat);
+			line.start();
+
+			line.write(mixedAudio, 0, Sam.buffer.length);
+
+			line.drain();
+			line.close();
+			//System.out.println("Done playing!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public static void speak(String phonemes) {
+		int[] input = new int[257];
+		char en1 = '\u009B';
+		char en2 = '\0';
+		for (int i = 0; i < phonemes.length(); i++) {
+			input[i] = phonemes.charAt(i);
+		}
+		input[phonemes.length() + 0] = en1;
+		input[phonemes.length() + 1] = en2;
+		Sam.SetInput(input);
+		if (Sam.SAMMain() == 0) {
+			//Main.PrintUsage();
+			System.out.println("Error: Bad phonetics somewhere here:\n" + phonemes);
+			return;
+		}
+		System.out.println(phonemes);
+		// SeeIfItAcutallyPutSomethingIntoTheSoundBuffer();
+		Main.OutputSound();
+	}
+	public static void Wait(long time) {
+		try {
+			Thread.sleep(time);
+		} catch(Exception e) {}
+	}
+
+
+    public static int[] getTTSAudio(String phonemes) {
+    	int[] input = new int[257];
+    	char en1 = '\u009B';
+		char en2 = '\0';
+		for (int i = 0; i < phonemes.length(); i++) {
+			input[i] = phonemes.charAt(i);
+		}
+		input[phonemes.length() + 0] = en1;
+		input[phonemes.length() + 1] = en2;
+		Sam.SetInput(input);
+		if (Sam.SAMMain() == 0) {
+			Main.PrintUsage();
+			return null;
+		}
+        return Sam.buffer;
+    }
+	
+}
+
+//This code is NOT MINE
+class Audio {
+	Long currentFrame;
+	Clip clip;
+	String status;
+	AudioInputStream audioInputStream;
+	static String filePath;
+
+	public Audio() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+		audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
+		clip = AudioSystem.getClip();
+		clip.open(audioInputStream);
+	}
+
+	public static void playaudio(String file) {
+		if (true) {
+			try {
+				filePath = file;
+				Audio audioPlayer = new Audio();
+				audioPlayer.play();
+			} catch (Exception ex) {
+				System.out.println("Error with playing sound.");
+				ex.printStackTrace();
+			}
+		}
+	}
+
+	public void play() {
+		clip.start();
+		status = "play";
+	}
+
+	public void stop() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+		currentFrame = 0L;
+		clip.stop();
+		clip.close();
+	}
+
+	public void resetAudioStream() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+		audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
+		clip.open(audioInputStream);
+		clip.loop(Clip.LOOP_CONTINUOUSLY);
+	}
+}

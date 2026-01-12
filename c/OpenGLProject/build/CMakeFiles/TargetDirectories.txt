@@ -1,0 +1,3 @@
+/home/isaac/OpenGLProject/build/CMakeFiles/game.dir
+/home/isaac/OpenGLProject/build/CMakeFiles/edit_cache.dir
+/home/isaac/OpenGLProject/build/CMakeFiles/rebuild_cache.dir
