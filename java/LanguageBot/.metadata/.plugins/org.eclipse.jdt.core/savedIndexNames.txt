@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+/home/isaac/TwitterBot/.metadata/.plugins/org.eclipse.jdt.core
-2949097923.index
-1457566708.index
-1865797976.index
