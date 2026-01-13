@@ -1,0 +1,23 @@
+
+Music:
+
+AuDioChosis - Steven F Allen - Audio Mirage
+https://soundclick.com/AuDioChosisStevenFAllenAuDioMiRage
+
+Sounds used:
+
+(from freesound.org)
+5mhz jam - dark overload
+radio transmission more code - nebulousroyale
+04 rails - 15gpanskamatejcovarebeka
+air raid siren alarm - screamstudio
+bullet richoshet - aust paul
+
+
+Special thanks to:
+
+ThinMatrix for making high quality LWJGL tutorials for free on YouTube
+https://www.youtube.com/c/ThinMatrix
+
+Freesound.org
+

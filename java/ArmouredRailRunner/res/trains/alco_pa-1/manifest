@@ -1,0 +1,19 @@
+{
+name = alco_pa-1
+type = trainVehicle
+position = 0 0 0
+rotation = 0 0 0
+scale = 1 1 1
+
+model = list
+	model1 = /models/cab.obj
+model1Texture = list
+	model1Texture1 = /texture/cabTexture
+	model1Texture2 = /texture/cabShiny
+	model1Texture3 = /texture/cabRefl
+	model1Texture4 = /texture/cabNormal
+model2 = /models/frame.obj
+model2Texture = /texture/frame
+model3 = 
+
+}

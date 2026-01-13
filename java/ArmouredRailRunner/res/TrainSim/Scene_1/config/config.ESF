@@ -1,0 +1,32 @@
+scene <name of scene> { 
+	add entity { 
+		fileName: <path/to/file> 
+		texture: </path/to/file> 
+		position: 0 0 0
+		rotation: 0 0 0 
+		scale: 0 0 0 //additional stuff 
+		roughness: 0 
+		reflectivity: 0
+	} 
+	add track { //create a pointer //this becomes track 0
+		fileName: <path/to/file>
+		texture: <path/to/texture>
+		trackLength: 12.01
+		position: 0 0 0
+		rotation: 0 0 0
+		scale: 0 0 0
+		trackData {
+		
+		}
+	} 
+	what??
+	add train { 
+		trainType: engine
+		
+		add wagon {
+			type: 50 //type is a predefined wagon
+		} add wagon {
+			type: 2
+		} 
+	} 
+}
