@@ -1,0 +1,54 @@
+So, you may have tried something new, and it broke making you panic with no direct answer as to whatthef*** went wrong.
+
+Whatthef*** went wrong?
+
+This error is what bad data will result in. This error was most likely caused by bad or incomplete mesh data that leads to the gpu attempting to 
+access non-existant data from the system RAM. Primarly, unset or null values.
+
+The following information tells a tale of what exactly occured within the Java VM with the same error you got: (this is not the full report)
+
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd2d0c8e69, pid=9640, tid=6612
+
+...
+
+j  org.lwjgl.opengl.GL11C.nglDrawElements(IIIJ)V+0
+j  org.lwjgl.opengl.GL11C.glDrawElements(IIIJ)V+4
+j  org.lwjgl.opengl.GL11.glDrawElements(IIIJ)V+4
+j  com.own.master.engine.graphics.Renderer.renderFont(Lcom/own/master/engine/objects/GameObject;)V+95
+j  com.own.master.font.Chat.render(Lcom/own/master/engine/graphics/Renderer;)V+17
+j  Main.Main.run()V+82
+
+...
+
+
+Register to memory mapping:
+
+RIP=0x00007ffd2d0c8e69 nvoglv64.dll
+RAX=0x0000000be4e85655 is an unknown value
+RBX=0x0000000000000001 is an unknown value
+RCX=0x0 is NULL
+RDX=0x00000076f1135f5a is an unknown value
+RSP=0x0000002a4cb5f2f0 is pointing into the stack for thread: 0x0000021861a82ed0
+RBP=0x0000000000000006 is an unknown value
+RSI=0x0000000000000006 is an unknown value
+RDI=0x0000000000001405 is an unknown value
+R8 =0x0000000000000014 is an unknown value
+R9 =0x0 is NULL
+R10=0x00000000546c6148 is an unknown value
+R11=0x0000000d6f5f2a28 is an unknown value
+R12=0x0000000000000004 is an unknown value
+R13=0x0000021862909080 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+R14=0x0 is NULL
+R15=0x000002186290be58 points into unknown readable memory: 0x0000000200000004 | 04 00 00 00 02 00 00 00
+
+...
+
+If you skim through the error report and see similar lines of pure unreadable chaos on the screen as shown here, congratulations! 
+You can get help without going on the internet!
+
+As we can see, there were attempts (or calls) to read memory that is not set. For this specific example, I created a mesh that had incomplete
+ mesh data, primairly missing/null normal values. Each empty and/or null memory address is supposed to be just that.
+
+MAKE SURE FIRST THAT YOUR MODELS EXPORTED CORRECTLY!!! Or make sure THAT YOU WROTE YOUR MESHES CORRECTLY!
+If something still isn't working, make sure that you are exporting with blenders OBJ file format with the checkmark "export selected" enabled.
+Also, make sure, if using blender, that you are using the "triangulate" modifier BEFORE exporting

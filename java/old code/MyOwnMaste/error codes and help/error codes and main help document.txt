@@ -1,0 +1,5 @@
+error codes: (see the root dir for any fatal java-runtime errors that do not give a simple 7 digit number)
+
+3442001: Missing engine asset, Make sure that all engine files, textures, shaders, and objects are not missing or corrupted.
+
+441044: Exception occured. Check your installation of java. This should not happen

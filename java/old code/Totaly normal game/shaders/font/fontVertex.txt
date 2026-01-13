@@ -1,0 +1,13 @@
+#version 330
+
+in vec2 position;
+in vec2 texCoord;
+
+out vec2 passTexCoord;
+
+uniform vec2 translation;
+
+void main() {
+	gl_Position = vec4(position, 0.0, 1.0);
+	passTexCoord = texCoord;
+}

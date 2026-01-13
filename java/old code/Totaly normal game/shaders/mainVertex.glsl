@@ -1,0 +1,54 @@
+#version 460 core
+
+//get buffers:
+in vec3 position;
+in vec3 color;
+in vec2 textureCoord;//this order DOES MATTER!!!!!!
+in vec3 normal;//this is in the order of the buffer index id number
+
+
+//define passing variables:
+out vec2 passTextureCoord;
+out vec3 passNormal;
+out vec3 passColor;
+out vec3 passPosition;
+out vec3 passLightColor[10];
+out vec3 passLightPosition[10];
+out vec3 passCameraVec;
+out float shade;
+out float visibility;
+
+
+//get variables:
+uniform mat4 transformationMatrix;
+uniform mat4 viewMatrix;
+uniform mat4 projectionMatrix;
+uniform vec3 lightColor[10];
+uniform vec3 lightPosition[10];
+uniform float density;
+uniform float gradient;
+uniform float shouldShade;
+uniform int numbLights;
+
+//program:
+void main(void) {
+	shade = shouldShade;
+	vec4 worldPosition = transformationMatrix * vec4(position,1.0);
+	vec4 positionRelativeToCam = viewMatrix * worldPosition;
+	gl_Position = projectionMatrix * viewMatrix * transformationMatrix * vec4(position, 1.0);
+	passTextureCoord = textureCoord;
+	
+	passColor = color;
+	passPosition = position;
+	
+	passNormal = (transformationMatrix * vec4(normal,0.0)).xyz;
+	for (int i = 0; i < numbLights; i += 1) {
+		passLightColor[i] = lightColor[i];
+		passLightPosition[i] = lightPosition[i] - worldPosition.xyz;
+	}
+	passCameraVec = (inverse(viewMatrix) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - worldPosition.xyz;
+	
+	float distance = length(positionRelativeToCam.xyz);
+	visibility = exp(-pow((distance*density), gradient));
+	visibility = clamp(visibility,0.0,1.0);
+}

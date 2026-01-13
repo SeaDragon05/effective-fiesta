@@ -1,0 +1,111 @@
+1.0000,-1.0000,-1.0000,0.5773,-0.5773,-0.5773,
+-1.0000,-1.0000,1.0000,-0.5773,-0.5773,0.5773,
+1.0000,-1.0000,1.0000,0.5773,-0.5773,0.5773,
+-1.0000,1.0000,1.0000,-0.5773,0.5773,0.5773,
+1.0000,1.0000,-1.0000,0.5773,0.5773,-0.5773,
+1.0000,1.0000,1.0000,0.5773,0.5773,0.5773,
+-1.0000,-1.0000,-1.0000,-0.5773,-0.5773,-0.5773,
+-1.0000,1.0000,-1.0000,-0.5773,0.5773,-0.5773
+0,1,2,
+3,4,5,
+5,0,2,
+4,6,0,
+6,3,1,
+2,3,5,
+0,6,1,
+3,7,4,
+5,4,0,
+4,7,6,
+6,7,3,
+2,1,3
+
+import java.util.Random;
+import javax.swing.*;
+import java.awt.*;
+public class map extends JPanel {
+   static Random rand = new Random();
+   static double spawnx = 0.0;//-48.021900529732676;
+   static double spawny = 7.0;
+   static double spawnz = 0.0;//-56.24639057765156;
+   static double look = 0.01;//42.01;
+   public map(){}
+   public static void compile(RealEngine eng) {
+      double[] point1 = new double[3]; 
+      double[] point2 = new double[3];
+      double[] point3 = new double[3];
+      double[][] normal = new double[7][3]
+      double[][] points = new double[7][3];
+      int[] red = eng.packint(255, 255, 255);
+      int[] green = eng.packint(255, 255, 255);
+      int[] blue = eng.packint(255, 255, 255);
+      int[] white = eng.packint(255, 255, 255);
+      int[] black = eng.packint(255, 255, 255);
+      int[] grey = eng.packint(132, 133, 124);
+      int[] cement = grey;
+      int[] wood = eng.packint(185, 156, 107);
+      points[0] = eng.pack(1.0000,-1.0000,-1.0000);
+      normal[0] = eng.pack(0.5773,-0.5773,-0.5773);
+      points[1] = eng.pack(-1.0000,-1.0000,1.0000);
+      normal[1] = eng.pack(-0.5773,-0.5773,0.5773);
+      points[2] = eng.pack(1.0000,-1.0000,1.0000);
+      normal[2] = eng.pack(0.5773,-0.5773,0.5773);
+      points[3] = eng.pack(-1.0000,1.0000,1.0000);
+      normal[3] = eng.pack(-0.5773,0.5773,0.5773);
+      points[4] = eng.pack(1.0000,1.0000,-1.0000);
+      normal[4] = eng.pack(0.5773,0.5773,-0.5773);
+      points[5] = eng.pack(1.0000,1.0000,1.0000);
+      normal[5] = eng.pack(0.5773,0.5773,0.5773);
+      points[6] = eng.pack(-1.0000,-1.0000,-1.0000);
+      normal[6] = eng.pack(-0.5773,-0.5773,-0.5773);
+      points[7] = eng.pack(-1.0000,1.0000,-1.0000);
+      normal[7] = eng.pack(-0.5773,0.5773,-0.5773);
+      int p1 = 0;
+      int p2 = 1;
+      int p3 = 2;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 3;
+      p2 = 4;
+      p3 = 5;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 5;
+      p2 = 0;
+      p3 = 2;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 4;
+      p2 = 6;
+      p3 = 0;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 6;
+      p2 = 3;
+      p3 = 1;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 2;
+      p2 = 3;
+      p3 = 5;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 0;
+      p2 = 6;
+      p3 = 1;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 3;
+      p2 = 7;
+      p3 = 4;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 5;
+      p2 = 4;
+      p3 = 0;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 4;
+      p2 = 7;
+      p3 = 6;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 6;
+      p2 = 7;
+      p3 = 3;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      p1 = 2;
+      p2 = 1;
+      p3 = 3;
+      eng.GeometryAdd(points[p1], points[p2], points[p3], normal[p1], normal[p2], normal[p3], 0, cement);
+      
+      

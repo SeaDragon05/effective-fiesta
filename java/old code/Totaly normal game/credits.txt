@@ -1,0 +1,56 @@
+Credits:
+	
+Developer:
+	Isaac Dredge
+
+
+
+Models:
+	me
+
+Textures:
+	me
+
+Music:
+	DeVern:
+		"Fantasy Orchestra"
+		Cimematic Soundscapes
+	SoundFlakes:
+		"Sad_Drama_Romantic_Stinger.mp3" - converted to .wav
+	bebeto:
+		"Ambient loop.mp3" - converted to .wav
+	Erokia (needs permission if this project is going for money)
+		"Elementry Wave 6"
+	Frankum
+		"Electronic music intro"
+	Andrewkn
+		"Wandering"
+
+Sounds:
+	cabled_mess:
+		"Jump_C_01"
+	Sami_Hiltunen
+		"Horror sfx 02"
+	broumbroum
+		"fall.wav"
+	Both "Horror sfx 02" and "fall.wav" were compiled together in "theFall.wav"
+	
+	vandrandepinnen
+		"Glitch collection"
+
+Software Used:
+	Eclipse IDE
+	Blender 2.6 & 3.0
+	Audacity
+
+Thanks to:
+	CodingAP for the LWJGL tutorials
+	https://www.youtube.com/channel/UClt_fTxah4FScqLECvCcneA
+
+	ThinMatrix for more tutorials
+	https://www.youtube.com/channel/UCUkRj4qoT1bsWpE_C8lZYoQ
+
+	FreeSound for providing music and sounds
+	freesound.org
+
+	

@@ -1,0 +1,106 @@
+Title: Spooky Mod
+Author: u/american-oil (original mod: Chrisbot6 and Demian)
+Originaly called support_Renderman, Adds a survival horror aspect to the game with so much more.
+
+Notes: 
+  
+	I hope that Chrisbot6 is okay with this...
+
+	If you have any ideas or suggestions for this mod (not gamemodes, you do that), please tell me about it on reddit: u/american-oil
+		I want ideas. I'm very passionate about programming so this is likely your chance to get these ideas in.
+	It is possible that there are actual glitches in this code. I've hunted them down as I've encountered them.
+	If you find one, please report it to me on reddit @ u/american-oil. I am active so if you message me about it, I should respond.
+		One glitch that may happen is a miscount of prepper. I've seen this once and was not able to replicate it.
+		Another is that the one kill happy prepper will glitch out and not respawn again (has only happened once) 
+		Last one I can think of is sometimes any type of renderman or your player model will litteraly 'switch' everything
+			Idk how to explain it, but rendermen are suddenly white and the player model is inverted with its cosmetics and color
+			
+			
+	Rendermen will complain about the void. What is this void? What could it be? Who sent them there? Why are they trying to come into our dimension?
+			
+	Feel free to open up the zip file and explore the code. I commented on the changes and some of the origional code. Laugh at what I wrote, or not.
+	
+	Last thing: I will not add satanic/devilish themes. You can. I wont.
+	
+Changes:
+
+Added and replaced spoopy noises:
+	+More ambient sounds and jumpscares
+		TONS OF SOUNDS
+	+Music depending on the situation
+		Three levels of music from slow to really upbeat
+	+Decreased the sound level and 'amount' of "fuckingshit" so that its not as annoying
+		replaced this sound in released version to a more annoying sound
+	+All sounds, except indoorgrowl and a few others, now plays in 2d rather than 3d (client and server)
+		This allows for better sound to play while playing. Other players WILL NOT HEAR what you hear
+	+Increased the amount of ambient music that plays according to the amount of rendermen and preppers.
+		
+	
+Added a very scary face texture that people might not like
+	Note: I can remove if requested
+
+Models:
+	Edited the detector model
+		Added buttons and removed some mesh from the main screen
+	Added a new glitch gun model (bugged)
+		Glitch gun is glitched. Wow.
+
+Gameplay changes:
+	Holding the detector no longer attracts rendermen to you
+		Glitch sounds occasionaly play while holding the detector
+	Renderman is now actually killable (Ouch! that really hurts!)
+		+Prepper is too
+		+Killed entities will usualy play a random sound
+	Increased the limit of rendermen from 5 to 99 (Ideal amount is about 10)
+	(Admins can use the detectors to see how many rendermen are in the game) - Removed
+	Admins now have the option of constantly detecting renderman via server settings
+	Rendermen now teleport more often
+	
+
+Added 'preppers':
+	Added a "safe to look at" prepper that kills players within a radius when it disappears. This will run at its target if the argo is set high enough.
+	Added a "safe to look at" prepper that has a chance of exploding and even running towards its target.
+	Preppers will have lights according to the server prefs.
+	Preppers do not increase the renderman count, but rather have their own 'levels' that are detected by the detector
+	
+Added more options in the renderman settings tab:
+	-Renderman Cycle time (dev) - does not work
+	-Use music? - currently bugged
+	-Should Rendermen only spawn when its dark? - I cant find the code which actually does this. If you know, please let me know
+	-Use scary faces? - bugged at the moment
+	+Admins always detect rendermen? - All admins will detect renderman reguardless if they are holding a detector
+	+Prepper argo and spawnrate
+		Spawnrate CAN BE SET to 'yes' which means that every 4 seconds atleast one WILL APPEAR
+	+Use Prepper?
+	+Can prepper kill?
+		This is the one prepper that kills within a certain radius
+
+Other changes:
+	Increased the time that faces last in the air
+	Renderman (the ones you cant look at for long) come in all sizes now!
+		X and Y scales are now randomized so you can get some really phat ones now 
+	
+
+Added more chat commands that you can use:
+	/rendermancount - (unprotected) announces to the server the count of the rendermen (non prepper)
+	/rendermanadmindetect - (admin only) makes the admins able to detect all the time
+	
+You can use these console commands to test:
+	function createPrepperA(%pos)
+	function createPrepperB(%pos)
+	
+	
+Credits:
+
+Chrisbot6 and Demian for the original mod
+
+Original Blockland renderman mod (used for the preppers)
+
+Blockland programming forum
+
+The following credits are required for certain sounds:
+
+Alex Nekita - "Action scene explosion" (alexnekita.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+(used in the after death music)

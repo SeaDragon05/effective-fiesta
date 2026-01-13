@@ -1,0 +1,5 @@
+id: 4731
+icon: skull_16
+type: Server Mods
+title: Spooky mod
+version: 1.7
